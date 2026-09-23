@@ -1,0 +1,31 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: aliceblue;
+    color: black;
+}
+h1{
+    color: rgb(211, 211, 211);
+}
+table{
+    display: flex;
+    flex-direction: column;
+    border-collapse: collapse;
+    border: 2px solid rgb(211, 211, 211);
+    font-family: sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+}
+thead,tfoot{
+    background-color: aliceblue;
+}
+th,td{
+    border: 1px solid azure;
+}
+td:nth-last-of-type{
+    text-align: center;
+}

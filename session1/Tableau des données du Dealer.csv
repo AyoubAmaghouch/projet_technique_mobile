@@ -1,0 +1,15 @@
+Interface,Nom,Signification,Type,Obligatoire,Calculée
+dealer,dealer,Identifiant du dealer,INT,OUI,NO
+dealer,nom,Nom du dealer,VARCHAR,OUI,NO
+dealer,adresse,Adresse du dealer,VARCHAR,OUI,NO
+dealer,ville,Ville du dealer,VARCHAR,OUI,NO
+dealer,telephone,Numéro de téléphone,VARCHAR,OUI,NO
+dealer,email,Adresse email,VARCHAR,OUI,NO
+vehicle,vehicle,Identifiant du véhicule,INT,OUI,NO
+vehicle,nom,Nom de la voiture,VARCHAR,OUI,NO
+vehicle,modele,Modèle de la voiture,VARCHAR,OUI,NO
+vehicle,est_diesel,Indique si la voiture est diesel,BOOLEAN,OUI,NO
+vehicle,dealer,Dealer de la voiture,INT,OUI,NO
+vehicle,vehicle_type,Type de la voiture,INT,OUI,NO
+vehicle_type,vehicle_type,Identifiant du type de véhicule,INT,OUI,NO
+vehicle_type,libelle,Nom du type de véhicule,VARCHAR,OUI,NO

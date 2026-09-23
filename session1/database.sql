@@ -1,62 +1,48 @@
-CREATE DATABASE freelance;
-USE freelance;
+CREATE DATABASE automotive_marketplace;
+USE automotive_marketplace;
 
--- 1. Freelance
-CREATE TABLE freelance (
-    id_freelance INT AUTO_INCREMENT PRIMARY KEY,
+CREATE TABLE dealer (
+    id_dealer INT AUTO_INCREMENT PRIMARY KEY,
     nom VARCHAR(100) NOT NULL,
-    prenom VARCHAR(100) NOT NULL,
-    email VARCHAR(150) NOT NULL UNIQUE,
-    telephone VARCHAR(30),
-    description TEXT,
-    image VARCHAR(255),
-    facebook VARCHAR(255),
-    instagram VARCHAR(255),
-    linkedin VARCHAR(255),
-    github VARCHAR(255)
+    adresse VARCHAR(255) NOT NULL,
+    ville VARCHAR(100) NOT NULL,
+    telephone VARCHAR(20) NOT NULL,
+    email VARCHAR(150) NOT NULL
 );
 
--- 2. Catégorie de service
-CREATE TABLE categorie_service (
-    id_categorie INT AUTO_INCREMENT PRIMARY KEY,
+CREATE TABLE vehicle_type (
+    id_vehicle_type INT AUTO_INCREMENT PRIMARY KEY,
+    libelle VARCHAR(100) NOT NULL
+);
+
+CREATE TABLE vehicle (
+    id_vehicle INT AUTO_INCREMENT PRIMARY KEY,
     nom VARCHAR(100) NOT NULL,
-    description TEXT
+    modele VARCHAR(100) NOT NULL,
+    est_diesel BOOLEAN NOT NULL,
+    id_dealer INT NOT NULL,
+    id_vehicle_type INT NOT NULL,
+
+    FOREIGN KEY (id_dealer)
+        REFERENCES dealer(id_dealer),
+
+    FOREIGN KEY (id_vehicle_type)
+        REFERENCES vehicle_type(id_vehicle_type)
 );
 
--- 3. Service (Gig)
-CREATE TABLE service (
-    id_service INT AUTO_INCREMENT PRIMARY KEY,
-    titre VARCHAR(150) NOT NULL,
-    description TEXT NOT NULL,
-    prix DECIMAL(10,2) NOT NULL,
-    image_service VARCHAR(255),
-    id_freelance INT NOT NULL,
-    id_categorie INT NOT NULL,
 
-    CONSTRAINT fk_service_freelance
-        FOREIGN KEY (id_freelance)
-        REFERENCES freelance(id_freelance)
-        ON DELETE CASCADE
-        ON UPDATE CASCADE,
+INSERT INTO vehicle_type (libelle)
+VALUES
+('Berline'),
+('SUV'),
+('Citadine'),
+('Coupé'),
+('Utilitaire');
 
-    CONSTRAINT fk_service_categorie
-        FOREIGN KEY (id_categorie)
-        REFERENCES categorie_service(id_categorie)
-        ON DELETE RESTRICT
-        ON UPDATE CASCADE
-);
 
--- 4. Commande
-CREATE TABLE commande (
-    id_commande INT AUTO_INCREMENT PRIMARY KEY,
-    date_commande DATE NOT NULL,
-    statut VARCHAR(50) NOT NULL,
-    prix_total DECIMAL(10,2) NOT NULL,
-    id_service INT NOT NULL,
 
-    CONSTRAINT fk_commande_service
-        FOREIGN KEY (id_service)
-        REFERENCES service(id_service)
-        ON DELETE RESTRICT
-        ON UPDATE CASCADE
-);
+INSERT INTO dealer (nom, adresse, ville, telephone, email)
+VALUES
+('Auto Maroc', '10 Avenue Mohammed V', 'Tanger', '0612345678', 'contact@automaroc.ma'),
+('Luxury Cars', '25 Route de Rabat', 'Tanger', '0623456789', 'contact@luxurycars.ma'),
+('Cars Center', '15 Rue Ibn Sina', 'Casablanca', '0634567890', 'contact@carscenter.ma');
