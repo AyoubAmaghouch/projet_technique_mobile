@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehicles</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 min-h-screen p-8">
+
+    <div class="max-w-4xl mx-auto">
+
+        <h1 class="text-3xl font-bold mb-6">
+            Gestion des véhicules
+        </h1>
+
+        <!-- Formulaire Create -->
+        <form id="vehicleForm" class="bg-white p-6 rounded-lg shadow mb-8">
+
+            <input
+                type="text"
+                id="marque"
+                placeholder="Marque"
+                class="border p-2 rounded w-full mb-3"
+                required
+            >
+
+            <input
+                type="text"
+                id="modele"
+                placeholder="Modèle"
+                class="border p-2 rounded w-full mb-3"
+                required
+            >
+
+            <input
+                type="number"
+                id="annee"
+                placeholder="Année"
+                class="border p-2 rounded w-full mb-3"
+                required
+            >
+
+            <button
+                type="submit"
+                class="bg-blue-600 text-white px-4 py-2 rounded"
+            >
+                Ajouter
+            </button>
+
+        </form>
+
+        <!-- Liste Read -->
+        <div id="vehiclesList" class="grid gap-4"></div>
+
+    </div>
+
+    <script src="main.js"></script>
+
+</body>
+</html>
