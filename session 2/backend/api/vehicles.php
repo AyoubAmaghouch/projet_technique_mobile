@@ -8,12 +8,16 @@ header("Content-Type: application/json");
 
 $method = $_SERVER["REQUEST_METHOD"];
 
+
+
 if ($method === "GET") {
 
     echo json_encode([
         "success" => true,
         "data" => $vehicle->getAll()
     ]);
+
+
 
 } elseif ($method === "POST") {
 
