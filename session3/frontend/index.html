@@ -4,14 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Administration - Blog Spartel</title>
-    <!-- Importation simplifiée de Tailwind CSS via CDN pour l'apprentissage -->
+    
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Configuration des couleurs primaires (optionnel, mais garde la maquette jolie) -->
    
 </head>
 <body class="bg-gray-100 text-gray-800 flex h-screen ">
 
-    <!-- BARRE LATÉRALE (Sidebar) -->
+   
     <aside class="w-64 bg-gray-900 text-white flex flex-col hidden md:flex">
 
         <div class="p-6 border-b border-gray-800">
@@ -20,7 +19,7 @@
         </div>
 
         <nav class="flex-1 p-4 space-y-2">
-            <!-- Lien actif -->
+            
             <a href="#" class="block px-4 py-2 rounded bg-blue-600 text-white font-medium">Catégories</a>
         </nav>
 
@@ -28,10 +27,9 @@
 
 
 
-    <!-- CONTENU PRINCIPAL -->
+   
     <div class="flex-1 flex flex-col h-screen overflow-hidden">
-        
-        <!-- ENTÊTE (Header) -->
+       
         <header class="bg-white h-16 border-b border-gray-200 flex items-center justify-between px-6">
 
             <div class="font-medium text-gray-600">
@@ -46,11 +44,11 @@
 
 
 
-        <!-- ZONE DE TRAVAIL (Main) -->
+      
         <main class="flex-1 overflow-y-auto p-6 bg-gray-50">
             <div class="max-w-5xl mx-auto space-y-8">
                 
-                <!-- SECTION 1 : EN-TÊTE DE LA PAGE -->
+               
                 <div class="flex justify-between items-center">
                     <div>
                         <h1 class="text-2xl font-bold text-gray-900">Catégories</h1>
@@ -59,12 +57,11 @@
                 
                 </div>
 
-                <!-- SECTION 2 : FORMULAIRE D'AJOUT/MODIFICATION (Caché par défaut) -->
+              
                 <div id="section-form" class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 ">
                     <h2 class="text-lg font-bold mb-4">Ajouter </h2>
                     <form id="genreForm" class="space-y-4">
-                        
-                        <!-- Champ Nom -->
+                      
                         <div>
                             <label for="Genre" class="block text-sm font-semibold text-gray-700 mb-1">Genre De Film</label>
                             <input type="text" id="Genre"  placeholder="Ex: action" 
@@ -77,7 +74,7 @@
                                 class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500">
                         </div>
 
-                        <!-- Boutons d'action -->
+                       
                         <div class="flex justify-end gap-2 mt-4">
                         
                            
@@ -96,7 +93,7 @@
                     </form>
                 </div>
 
-                <!-- SECTION 3 : LISTE DES CATÉGORIES -->
+               
                 <div class="bg-white rounded-lg shadow-sm border border-gray-200 ">
                     <table class="w-full text-left border-collapse">
                         
@@ -122,7 +119,7 @@
         </main>
     </div>
 
-    <!-- Script SPA -->
+  
     <script src="genre.js"></script>
     
 <div id="toast"

@@ -18,7 +18,7 @@ function setLoadingState(isLoading) {
     }
 }
 
-// 1. Charger les genres
+
 function chargerGenres() {
     fetch(API_URL)
         .then((response) => {
@@ -60,7 +60,7 @@ function showToast(message, type) {
         type === "success" ? "bg-green-600" : "bg-red-600"
     );
 
-    // Affichage du texte
+   
     toast.style.display = "block";
     toast.style.color = "white";
     toast.style.minWidth = "200px";
@@ -74,7 +74,7 @@ function showToast(message, type) {
     }, 3000);
 }
 
-// 2. Ajouter un genre
+
 genreForm.addEventListener("submit", function (event) {
     event.preventDefault();
 
@@ -125,6 +125,6 @@ genreForm.addEventListener("submit", function (event) {
         });
 });
 
-// 3. Charger les genres au démarrage
+
 chargerGenres();
 showToast("Une erreur est survenue !", "error");

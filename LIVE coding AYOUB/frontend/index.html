@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administration - Blog Spartel</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+   
+</head>
+<body class="bg-gray-100 text-gray-800 flex h-screen ">
+
+   
+    <aside class="w-64 bg-gray-900 text-white flex flex-col hidden md:flex">
+
+        <div class="p-6 border-b border-gray-800">
+            <h2 class="text-xl font-bold">Admin Blog</h2>
+            <p class="text-xs text-primary-500 mt-1 uppercase font-semibold tracking-wider">Sprint 1</p>
+        </div>
+
+        <nav class="flex-1 p-4 space-y-2">
+            
+            <a href="#" class="block px-4 py-2 rounded bg-blue-600 text-white font-medium">Catégories</a>
+        </nav>
+
+    </aside>
+
+
+
+   
+    <div class="flex-1 flex flex-col h-screen overflow-hidden">
+       
+        <header class="bg-white h-16 border-b border-gray-200 flex items-center justify-between px-6">
+
+            <div class="font-medium text-gray-600">
+                Gestion des catégories
+            </div>
+
+            <div class="flex items-center gap-2">
+                <span class="text-sm font-semibold " >Admin</span>
+            </div>
+
+        </header>
+
+
+
+      
+        <main class="flex-1 overflow-y-auto p-6 bg-gray-50">
+            <div class="max-w-5xl mx-auto space-y-8">
+                
+               
+                <div class="flex justify-between items-center">
+                    <div>
+                        <h1 class="text-2xl font-bold text-gray-900">Catégories</h1>
+                        <p class="text-sm text-gray-500">Organisez les rubriques de votre blog.</p>
+                    </div>
+                
+                </div>
+
+              
+                <div id="section-form" class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 ">
+                    <h2 class="text-lg font-bold mb-4">Ajouter </h2>
+                    <form id="genreForm" class="space-y-4">
+                      
+                        <div>
+                            <label for="Genre" class="block text-sm font-semibold text-gray-700 mb-1">Genre De Film</label>
+                            <input type="text" id="Genre"  placeholder="Ex: action" 
+                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500">
+                        </div>
+                        
+                        <div>
+                            <label for="Description" class="block text-sm font-semibold text-gray-700 mb-1">Description</label>
+                            <input type="text" id="Description"  placeholder="Ex: Description genre " 
+                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500">
+                        </div>
+
+                       
+                        <div class="flex justify-end gap-2 mt-4">
+                        
+                           
+<button
+    type="submit"
+    id="btn-submit-form"
+    class="px-4 py-2 bg-blue-600 text-white rounded
+           hover:bg-blue-700 transition
+           disabled:bg-gray-400
+           disabled:cursor-not-allowed
+           disabled:opacity-70">
+    Enregistrer
+</button>
+
+                        </div>
+                    </form>
+                </div>
+
+               
+                <div class="bg-white rounded-lg shadow-sm border border-gray-200 ">
+                    <table class="w-full text-left border-collapse">
+                        
+                        <thead class="bg-gray-50 border-b border-gray-200">
+                            <tr>
+                                <th class="p-4 text-sm font-semibold text-gray-500 uppercase">ID</th>
+                                <th class="p-4 text-sm font-semibold text-gray-500 uppercase">Genre</th>
+                                <th class="p-4 text-sm font-semibold text-gray-500 uppercase">Description</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="genreTableBody" class="divide-y divide-gray-100">
+
+                            
+
+                        </tbody>
+                    
+                    </table>
+                
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+  
+    <script src="genre.js"></script>
+    
+<div id="toast"
+     class="hidden fixed top-5 right-5 z-50 rounded-lg px-5 py-3 text-white shadow-lg">
+</div>
+
+</body>
+</html>
